@@ -1,68 +1,107 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Terms of Service · Italia Turrita</title>
 <meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f7f6f3;--surface:#ffffff;--fg:#1b1b19;--muted:#5c5a54;--line:#e3e0d8;--accent:#0b6e3f;--accent-soft:#e7f2ec}
-@media (prefers-color-scheme:dark){:root{--bg:#121211;--surface:#1a1a18;--fg:#ecebe6;--muted:#a3a19a;--line:#2e2d2a;--accent:#4fbf86;--accent-soft:#16261d}}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-header{background:var(--surface);border-bottom:1px solid var(--line)}
-.bar{max-width:820px;margin:0 auto;padding:14px 16px;display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap}
-.brand{font-weight:650;letter-spacing:.01em}
-nav a{color:var(--muted);text-decoration:none;margin-left:16px;font-size:.95rem}nav a:first-child{margin-left:0}nav a[aria-current]{color:var(--accent);font-weight:600}
-main{max-width:820px;margin:0 auto;padding:32px 16px 64px}
-article{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:32px clamp(16px,4vw,40px)}
-h1{font-size:clamp(1.6rem,4vw,2rem);line-height:1.2;margin:0 0 .25rem}
-.effective{color:var(--muted);margin:0 0 1.5rem}
-h2{font-size:1.15rem;margin:2.2rem 0 .6rem;padding-top:.6rem;border-top:1px solid var(--line);scroll-margin-top:16px}
-p,li{max-width:70ch}ul{padding-left:1.3rem}li{margin:.25rem 0}
+:root{--navy:#0d1846;--navy-2:#17245f;--navy-3:#27357f;--ink:#141a33;--muted:#5f6584;--line:#e4e6ef;--bg:#eef0f6;--card:#fff;--accent:#2c3a8f;--soft:#e9ebf7;--radius:16px;--shadow:0 1px 2px rgba(13,24,70,.05),0 8px 24px rgba(13,24,70,.07)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.7 Montserrat,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
 a{color:var(--accent)}
-code{font-family:ui-monospace,Consolas,monospace;font-size:.9em;background:var(--accent-soft);color:var(--accent);padding:.08em .35em;border-radius:4px}
-.toc{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px 16px;margin:0 0 1rem}
-.toc strong{font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
-.toc ol{margin:.4rem 0 0;padding-left:0;columns:2;column-gap:24px;list-style:none}.toc li{break-inside:avoid;font-size:.95rem}
-@media (max-width:560px){.toc ol{columns:1}}
-.table{overflow-x:auto;margin:1rem 0}
-table{border-collapse:collapse;width:100%;font-size:.95rem}
-th,td{border-bottom:1px solid var(--line);padding:.6rem .7rem;text-align:left;vertical-align:top}
-th{font-weight:600;background:var(--bg)}
-footer{max-width:820px;margin:0 auto;padding:0 16px 40px;color:var(--muted);font-size:.9rem}
+.layout{display:grid;grid-template-columns:280px minmax(0,1fr);min-height:100vh}
+.side{position:sticky;top:0;height:100vh;background:var(--navy);color:#fff;display:flex;flex-direction:column;overflow:hidden}
+.brand{display:flex;align-items:center;gap:12px;padding:24px 22px 18px}
+.brand img{width:46px;height:46px;border-radius:50%;box-shadow:0 0 0 2px rgba(255,255,255,.12)}
+.brand b{display:block;font-weight:800;letter-spacing:.08em;font-size:13px;line-height:1.2}.brand small{display:block;font-size:10.5px;letter-spacing:.14em;opacity:.65;margin-top:3px}
+.docs{display:flex;flex-direction:column;gap:4px;padding:6px 14px 14px;border-bottom:1px solid rgba(255,255,255,.08)}
+.docs a{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.72);text-decoration:none;padding:10px 12px;border-radius:10px;font-weight:600;font-size:13.5px;position:relative;transition:background .2s,color .2s}
+.docs a:hover{background:rgba(255,255,255,.06);color:#fff}
+.docs a[aria-current]{background:rgba(255,255,255,.1);color:#fff}.docs a[aria-current]::before{content:"";position:absolute;left:-14px;top:9px;bottom:9px;width:3px;border-radius:0 3px 3px 0;background:#fff}
+.docs svg{width:18px;height:18px;flex:none;opacity:.9}
+.toc{flex:1;overflow:auto;padding:14px 14px 18px;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.2) transparent}
+.toc strong{display:block;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.6);padding:0 12px 8px}
+.toc ol{list-style:none;margin:0;padding:0}
+.toc a{display:flex;gap:10px;align-items:baseline;color:rgba(255,255,255,.7);text-decoration:none;padding:6px 12px;border-radius:8px;font-size:12.5px;line-height:1.45;transition:background .2s,color .2s}
+.toc a:hover{background:rgba(255,255,255,.06);color:#fff}
+.toc a span{flex:none;min-width:18px;font-variant-numeric:tabular-nums;opacity:.5;font-weight:700}.toc a .dot{min-width:6px;max-width:6px;height:6px;margin:0 6px;border-radius:50%;background:#7fd1a1;opacity:1;align-self:center}
+.tricolour{display:flex;height:5px;flex:none}.tricolour i{flex:1}.tricolour i:nth-child(1){background:#009246}.tricolour i:nth-child(2){background:#f4f5f0}.tricolour i:nth-child(3){background:#ce2b37}
+main{padding:28px clamp(16px,4vw,48px) 56px;max-width:1040px;width:100%}
+.banner{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 60%,var(--navy-3) 100%);color:#fff;border-radius:var(--radius);padding:30px 32px;box-shadow:var(--shadow)}
+.banner::after{content:"";position:absolute;right:-60px;top:-60px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.1),transparent 70%)}
+.banner .eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:.65;font-weight:700}
+.banner h1{margin:6px 0 12px;font-size:clamp(22px,3.2vw,30px);line-height:1.2;font-weight:800;letter-spacing:-.01em}
+.pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.16);padding:5px 12px;border-radius:999px;font-size:12px;font-weight:600}
+.pill::before{content:"";width:7px;height:7px;border-radius:50%;background:#7fd1a1}
+.card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px 28px 20px;margin-top:16px;scroll-margin-top:20px}
+.card:target{box-shadow:0 0 0 2px var(--accent),var(--shadow)}
+h2{display:flex;align-items:center;gap:14px;font-size:17px;font-weight:700;margin:0 0 10px;letter-spacing:-.005em}
+.num{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--soft);color:var(--accent);font-size:13px;font-weight:800;font-variant-numeric:tabular-nums}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.summary{background:linear-gradient(180deg,#f3f5ff,#fff);border:1px solid #dfe3f6}
+.summary .summary-mark{background:#e3f4ea;color:#2e8b57}
+.summary ul{list-style:none;padding:0}.summary li{position:relative;padding-left:26px}.summary li::before{content:"";position:absolute;left:4px;top:.62em;width:8px;height:8px;border-radius:50%;background:#2e8b57}
+p,li{max-width:74ch;color:#2a3050}p{margin:.55em 0}ul{padding-left:1.25rem;margin:.5em 0}li{margin:.35em 0}
+strong{color:var(--ink)}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.86em;background:var(--soft);color:var(--accent);padding:.12em .45em;border-radius:6px;white-space:nowrap}
+.table{overflow-x:auto;margin:14px 0 6px;border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{padding:11px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+tr:last-child td{border-bottom:0}
+th{background:#f6f7fb;font-weight:700;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+td:first-child{font-weight:600;color:var(--ink);white-space:nowrap}
+tbody tr{transition:background .15s}tbody tr:hover{background:#fafbff}
+footer{margin-top:28px;color:var(--muted);font-size:12.5px;text-align:center}
+@media (max-width:980px){
+.layout{grid-template-columns:minmax(0,1fr)}
+.side{position:sticky;top:0;z-index:2;height:auto;box-shadow:0 6px 20px rgba(13,24,70,.25)}
+.brand{padding:14px 16px 8px}.brand img{width:36px;height:36px}
+.docs{flex-direction:row;padding:4px 12px 10px;gap:6px}.docs a{flex:1;justify-content:center;padding:8px 10px;font-size:12.5px}.docs a[aria-current]::before{display:none}
+.toc{flex:none;overflow:visible;padding:0 0 10px}.toc strong{display:none}
+.toc ol{display:flex;gap:6px;overflow-x:auto;padding:0 12px;scroll-snap-type:x proximity;scrollbar-width:none}.toc ol::-webkit-scrollbar{display:none}
+.toc li{flex:none;scroll-snap-align:start}.toc a{background:rgba(255,255,255,.08);border-radius:999px;padding:6px 12px;white-space:nowrap;font-size:12px}
+}
+@media (max-width:560px){.card{padding:20px 18px 16px}.banner{padding:24px 20px}td:first-child{white-space:normal}main{padding-top:16px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+@media print{.side{display:none}.layout{display:block}.card,.banner{box-shadow:none;border:1px solid #ccc}.banner{background:#fff;color:#000}}
 </style></head><body>
-<header><div class="bar"><span class="brand">Italia Turrita</span><nav><a href="../terms/" aria-current="page">Terms of Service</a><a href="../privacy/">Privacy Policy</a></nav></div></header>
-<main><article>
-<h1>Italia Turrita Terms of Service</h1>
-<p class="effective"><span>Effective date: 14 October 2026</span></p>
-<div class="toc"><strong>Contents</strong><ol><li><a href="#1-agreement">1. Agreement</a></li><li><a href="#2-the-service">2. The Service</a></li><li><a href="#3-eligibility">3. Eligibility</a></li><li><a href="#4-account-linking">4. Account linking</a></li><li><a href="#5-acceptable-use">5. Acceptable use</a></li><li><a href="#6-staff-permissions-and-oversight">6. Staff permissions and oversight</a></li><li><a href="#7-moderation-and-sanctions">7. Moderation and sanctions</a></li><li><a href="#8-roleplay-ranks-positions-and-virtual-items">8. Roleplay ranks, positions and virtual items</a></li><li><a href="#9-privacy-and-erasure">9. Privacy and erasure</a></li><li><a href="#10-availability-and-changes-to-the-service">10. Availability and changes to the Service</a></li><li><a href="#11-disclaimer-and-limitation-of-liability">11. Disclaimer and limitation of liability</a></li><li><a href="#12-suspension-and-termination">12. Suspension and termination</a></li><li><a href="#13-changes-to-these-terms">13. Changes to these Terms</a></li><li><a href="#14-contact">14. Contact</a></li></ol></div>
-<h2 id="1-agreement">1. Agreement</h2>
-<p>These Terms of Service (&quot;Terms&quot;) govern your use of Italia Turrita (the &quot;Service&quot;), a Discord application operated by the administration of the Italia Turrita community (&quot;we&quot;, &quot;us&quot;, &quot;our&quot;). By using the Service, including by running any of its commands or by linking a Roblox account to it, you agree to these Terms and to our Privacy Policy. If you do not agree, you must not use the Service.</p>
-<h2 id="2-the-service">2. The Service</h2>
-<p>The Service supports the Italia roleplay community across its Discord servers, its Roblox groups and the Roblox experience Porto Ercole. It:</p>
+<div class="layout">
+<aside class="side" aria-label="Documents">
+<div class="brand"><img src="https://italiaturrita.github.io/emblem.png" alt=""><div><b>ITALIA TURRITA</b><small>LEGAL</small></div></div>
+<nav class="docs"><a href="../terms/" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>Terms of Service</a><a href="../privacy/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6z"/><path d="M9.5 12l2 2 3.5-4"/></svg>Privacy Policy</a></nav>
+<div class="toc"><strong>Contents</strong><ol><li><a href="#1-agreement"><span>1</span>Agreement</a></li><li><a href="#2-the-service"><span>2</span>The Service</a></li><li><a href="#3-eligibility"><span>3</span>Eligibility</a></li><li><a href="#4-account-linking"><span>4</span>Account linking</a></li><li><a href="#5-acceptable-use"><span>5</span>Acceptable use</a></li><li><a href="#6-staff-permissions-and-oversight"><span>6</span>Staff permissions and oversight</a></li><li><a href="#7-moderation-and-sanctions"><span>7</span>Moderation and sanctions</a></li><li><a href="#8-roleplay-ranks-positions-and-virtual-items"><span>8</span>Roleplay ranks, positions and virtual items</a></li><li><a href="#9-privacy-and-erasure"><span>9</span>Privacy and erasure</a></li><li><a href="#10-availability-and-changes-to-the-service"><span>10</span>Availability and changes to the Service</a></li><li><a href="#11-disclaimer-and-limitation-of-liability"><span>11</span>Disclaimer and limitation of liability</a></li><li><a href="#12-suspension-and-termination"><span>12</span>Suspension and termination</a></li><li><a href="#13-changes-to-these-terms"><span>13</span>Changes to these Terms</a></li><li><a href="#14-contact"><span>14</span>Contact</a></li></ol></div>
+<div class="tricolour" aria-hidden="true"><i></i><i></i><i></i></div>
+</aside>
+<main>
+<header class="banner"><div class="eyebrow">Italia Turrita</div><h1>Italia Turrita Terms of Service</h1><span class="pill">Effective date: 14 October 2026</span></header>
+<section class="card" aria-labelledby="1-agreement"><h2 id="1-agreement"><span class="num" aria-hidden="true">1</span><span><span class="sr">1. </span>Agreement</span></h2><p>These Terms of Service (&quot;Terms&quot;) govern your use of Italia Turrita (the &quot;Service&quot;), a Discord application operated by the administration of the Italia Turrita community (&quot;we&quot;, &quot;us&quot;, &quot;our&quot;). By using the Service, including by running any of its commands or by linking a Roblox account to it, you agree to these Terms and to our Privacy Policy. If you do not agree, you must not use the Service.</p>
+</section>
+<section class="card" aria-labelledby="2-the-service"><h2 id="2-the-service"><span class="num" aria-hidden="true">2</span><span><span class="sr">2. </span>The Service</span></h2><p>The Service supports the Italia roleplay community across its Discord servers, its Roblox groups and the Roblox experience Porto Ercole. It:</p>
 <ul><li>links Discord accounts to Roblox accounts, and assigns Discord roles and nicknames that reflect Roblox group ranks;</li><li>administers moderation in the community&#39;s Discord servers and in Porto Ercole, and keeps a record of each moderation action;</li><li>handles warrant applications between Porto Ercole and the Sistema Giudiziario server;</li><li>manages Roblox group ranks, join requests, points, medals and roleplay positions for the community&#39;s groups.</li></ul>
 <p>The Service is not affiliated with, endorsed by or sponsored by Discord Inc. or Roblox Corporation.</p>
-<h2 id="3-eligibility">3. Eligibility</h2>
-<p>You must be at least the minimum age required by Discord and Roblox in your country of residence, and you must comply with the Discord Terms of Service, the Discord Community Guidelines and the Roblox Terms of Use at all times.</p>
-<h2 id="4-account-linking">4. Account linking</h2>
-<ul><li>You may link only a Roblox account that you own and control. You must not link, or attempt to link, an account belonging to another person, and you must not help another person link your account.</li><li>The verification link the Service gives you is personal to your Discord account. Do not share it.</li><li>You may link a different Roblox account at any time with <code>/account change</code>. The previously linked account is then no longer synchronised and, where applicable, returns to the citizen rank of the main group; any roleplay positions it held are referred for review.</li><li>You may request erasure of your data at any time with <code>/privacy forget</code>, as described in section 9.</li></ul>
-<h2 id="5-acceptable-use">5. Acceptable use</h2>
-<p>You agree not to:</p>
+</section>
+<section class="card" aria-labelledby="3-eligibility"><h2 id="3-eligibility"><span class="num" aria-hidden="true">3</span><span><span class="sr">3. </span>Eligibility</span></h2><p>You must be at least the minimum age required by Discord and Roblox in your country of residence, and you must comply with the Discord Terms of Service, the Discord Community Guidelines and the Roblox Terms of Use at all times.</p>
+</section>
+<section class="card" aria-labelledby="4-account-linking"><h2 id="4-account-linking"><span class="num" aria-hidden="true">4</span><span><span class="sr">4. </span>Account linking</span></h2><ul><li>You may link only a Roblox account that you own and control. You must not link, or attempt to link, an account belonging to another person, and you must not help another person link your account.</li><li>The verification link the Service gives you is personal to your Discord account. Do not share it.</li><li>You may link a different Roblox account at any time with <code>/account change</code>. The previously linked account is then no longer synchronised and, where applicable, returns to the citizen rank of the main group; any roleplay positions it held are referred for review.</li><li>You may request erasure of your data at any time with <code>/privacy forget</code>, as described in section 9.</li></ul>
+</section>
+<section class="card" aria-labelledby="5-acceptable-use"><h2 id="5-acceptable-use"><span class="num" aria-hidden="true">5</span><span><span class="sr">5. </span>Acceptable use</span></h2><p>You agree not to:</p>
 <ul><li>use the Service for any purpose other than its intended function within the community;</li><li>interfere with, overload, probe or circumvent the Service, its security measures or its permissions;</li><li>impersonate any person, or misrepresent your identity or your affiliation;</li><li>use the Service to harass, threaten or discriminate against any person;</li><li>use any staff permission granted to you for personal reasons, or outside the purpose for which it was granted.</li></ul>
-<h2 id="6-staff-permissions-and-oversight">6. Staff permissions and oversight</h2>
-<p>Certain members are granted permissions to manage ranks, points, medals and moderation through the Service. All such actions are recorded. The Service automatically monitors staff activity for signs of misuse, including excessive rank changes, changes to one&#39;s own rank, actions against people of equal or higher rank and repeated reversals. When such activity is detected, the action is blocked and the member&#39;s permissions within the Service are suspended pending review by the administration, which may reverse any changes made.</p>
-<h2 id="7-moderation-and-sanctions">7. Moderation and sanctions</h2>
-<ul><li>Authorised staff may issue warnings, timeouts, kicks and bans. A ban may apply to one Discord server, to chosen servers, to Porto Ercole only, or to the whole community.</li><li>For serious violations, the administration may impose a community-wide sanction, which applies across all of the community&#39;s Discord servers, Roblox groups and Porto Ercole, and extends to the linked account.</li><li>Each moderation action is recorded as a case with a case number, which is given to you when you are told about it.</li><li><strong>Appeals.</strong> To appeal, contact the administration of the Italia Turrita community and quote the case number. Appeals are reviewed by someone who did not take the original decision. An appeal is decided by a member of staff other than the one who took the original decision, and you will be told the outcome.</li></ul>
-<h2 id="8-roleplay-ranks-positions-and-virtual-items">8. Roleplay ranks, positions and virtual items</h2>
-<p>Ranks, positions, points and medals exist solely within the community&#39;s roleplay. They confer no ownership rights and have no monetary or other value outside the community. They may be granted, changed or withdrawn by the people authorised to manage them.</p>
-<h2 id="9-privacy-and-erasure">9. Privacy and erasure</h2>
-<p>Our Privacy Policy explains what data the Service processes and why. You may view a summary of your data with <code>/privacy view</code> and request erasure with <code>/privacy forget</code>. Because ranks and positions cannot be maintained without the records that manage them, an erasure request also removes you from the community&#39;s Roblox groups. You may link again and request to rejoin afterwards.</p>
-<h2 id="10-availability-and-changes-to-the-service">10. Availability and changes to the Service</h2>
-<p>The Service is provided by volunteers on an &quot;as is&quot; and &quot;as available&quot; basis. We may modify, suspend or discontinue all or part of the Service at any time, without notice.</p>
-<h2 id="11-disclaimer-and-limitation-of-liability">11. Disclaimer and limitation of liability</h2>
-<p>To the fullest extent permitted by law, we make no warranties of any kind regarding the Service, and we are not liable for any loss or damage arising from your use of the Service, from its unavailability, or from decisions taken by community staff. Nothing in these Terms excludes any liability that cannot be excluded by law, and nothing in them affects your statutory rights, including the consumer and data protection rights of the country where you live.</p>
-<h2 id="12-suspension-and-termination">12. Suspension and termination</h2>
-<p>We may suspend or end your access to the Service at any time if you breach these Terms or the rules of the community. You may stop using the Service at any time.</p>
-<h2 id="13-changes-to-these-terms">13. Changes to these Terms</h2>
-<p>We may update these Terms from time to time. The effective date above shows the current version. We will announce material changes in the community&#39;s Discord servers at least seven days before they take effect. If you do not agree with a change, you may stop using the Service and request erasure of your data.</p>
-<h2 id="14-contact">14. Contact</h2>
-<p>Questions about these Terms may be sent by email to repubblicaitaliana-rblx@googlegroups.com, or through the Italia Turrita administration on the community&#39;s Discord servers.</p>
-</article></main>
+</section>
+<section class="card" aria-labelledby="6-staff-permissions-and-oversight"><h2 id="6-staff-permissions-and-oversight"><span class="num" aria-hidden="true">6</span><span><span class="sr">6. </span>Staff permissions and oversight</span></h2><p>Certain members are granted permissions to manage ranks, points, medals and moderation through the Service. All such actions are recorded. The Service automatically monitors staff activity for signs of misuse, including excessive rank changes, changes to one&#39;s own rank, actions against people of equal or higher rank and repeated reversals. When such activity is detected, the action is blocked and the member&#39;s permissions within the Service are suspended pending review by the administration, which may reverse any changes made.</p>
+</section>
+<section class="card" aria-labelledby="7-moderation-and-sanctions"><h2 id="7-moderation-and-sanctions"><span class="num" aria-hidden="true">7</span><span><span class="sr">7. </span>Moderation and sanctions</span></h2><ul><li>Authorised staff may issue warnings, timeouts, kicks and bans. A ban may apply to one Discord server, to chosen servers, to Porto Ercole only, or to the whole community.</li><li>For serious violations, the administration may impose a community-wide sanction, which applies across all of the community&#39;s Discord servers, Roblox groups and Porto Ercole, and extends to the linked account.</li><li>Each moderation action is recorded as a case with a case number, which is given to you when you are told about it.</li><li><strong>Appeals.</strong> To appeal, contact the administration of the Italia Turrita community and quote the case number. Appeals are reviewed by someone who did not take the original decision. An appeal is decided by a member of staff other than the one who took the original decision, and you will be told the outcome.</li></ul>
+</section>
+<section class="card" aria-labelledby="8-roleplay-ranks-positions-and-virtual-items"><h2 id="8-roleplay-ranks-positions-and-virtual-items"><span class="num" aria-hidden="true">8</span><span><span class="sr">8. </span>Roleplay ranks, positions and virtual items</span></h2><p>Ranks, positions, points and medals exist solely within the community&#39;s roleplay. They confer no ownership rights and have no monetary or other value outside the community. They may be granted, changed or withdrawn by the people authorised to manage them.</p>
+</section>
+<section class="card" aria-labelledby="9-privacy-and-erasure"><h2 id="9-privacy-and-erasure"><span class="num" aria-hidden="true">9</span><span><span class="sr">9. </span>Privacy and erasure</span></h2><p>Our Privacy Policy explains what data the Service processes and why. You may view a summary of your data with <code>/privacy view</code> and request erasure with <code>/privacy forget</code>. Because ranks and positions cannot be maintained without the records that manage them, an erasure request also removes you from the community&#39;s Roblox groups. You may link again and request to rejoin afterwards.</p>
+</section>
+<section class="card" aria-labelledby="10-availability-and-changes-to-the-service"><h2 id="10-availability-and-changes-to-the-service"><span class="num" aria-hidden="true">10</span><span><span class="sr">10. </span>Availability and changes to the Service</span></h2><p>The Service is provided by volunteers on an &quot;as is&quot; and &quot;as available&quot; basis. We may modify, suspend or discontinue all or part of the Service at any time, without notice.</p>
+</section>
+<section class="card" aria-labelledby="11-disclaimer-and-limitation-of-liability"><h2 id="11-disclaimer-and-limitation-of-liability"><span class="num" aria-hidden="true">11</span><span><span class="sr">11. </span>Disclaimer and limitation of liability</span></h2><p>To the fullest extent permitted by law, we make no warranties of any kind regarding the Service, and we are not liable for any loss or damage arising from your use of the Service, from its unavailability, or from decisions taken by community staff. Nothing in these Terms excludes any liability that cannot be excluded by law, and nothing in them affects your statutory rights, including the consumer and data protection rights of the country where you live.</p>
+</section>
+<section class="card" aria-labelledby="12-suspension-and-termination"><h2 id="12-suspension-and-termination"><span class="num" aria-hidden="true">12</span><span><span class="sr">12. </span>Suspension and termination</span></h2><p>We may suspend or end your access to the Service at any time if you breach these Terms or the rules of the community. You may stop using the Service at any time.</p>
+</section>
+<section class="card" aria-labelledby="13-changes-to-these-terms"><h2 id="13-changes-to-these-terms"><span class="num" aria-hidden="true">13</span><span><span class="sr">13. </span>Changes to these Terms</span></h2><p>We may update these Terms from time to time. The effective date above shows the current version. We will announce material changes in the community&#39;s Discord servers at least seven days before they take effect. If you do not agree with a change, you may stop using the Service and request erasure of your data.</p>
+</section>
+<section class="card" aria-labelledby="14-contact"><h2 id="14-contact"><span class="num" aria-hidden="true">14</span><span><span class="sr">14. </span>Contact</span></h2><p>Questions about these Terms may be sent by email to repubblicaitaliana-rblx@googlegroups.com, or through the Italia Turrita administration on the community&#39;s Discord servers.</p></section>
 <footer>Italia Turrita is a community project and is not affiliated with Discord Inc. or Roblox Corporation.</footer>
+</main>
+</div>
 </body></html>
