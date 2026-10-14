@@ -157,6 +157,7 @@ footer{margin-top:28px;color:var(--muted);font-size:12.5px;text-align:center}
 </section>
 <section class="card" aria-labelledby="9-security"><h2 id="9-security"><span class="num" aria-hidden="true">9</span><span><span class="sr">9. </span>Security</span></h2><p><em>In plain terms:</em> access to your information is locked down and watched.</p>
 <p><strong>9.1</strong> Access credentials for the Service are held in Cloudflare&#39;s encrypted secret store and are never kept in its code or in the Data Store.</p>
+<p><strong>9.1A</strong> Personal Data in the Data Store is encrypted at rest with AES-256-GCM, using a key held only in Cloudflare&#39;s encrypted secret store. File names that would identify a Member are replaced with keyed pseudonyms. Neither GitHub nor any person with access to the repository can read the records without that key.</p>
 <p><strong>9.2</strong> The Data Store is a private repository. Access to Staff functions is limited by role and monitored for misuse, and Dashboard sessions expire 12 hours after sign-in.</p>
 <p><strong>9.2A</strong> In the event of a breach of security that affects Personal Data, we shall assess and contain it without delay. We shall notify the competent supervisory authority, and the persons affected, where and within the time that the law requires (Articles 33 and 34 of the GDPR; section 22 of POPIA).</p>
 <p><strong>9.3</strong> The Dashboard uses a single strictly necessary session cookie and stores your language preference in your browser. Details are set out in the Italia Turrita Cookie Policy.</p>
